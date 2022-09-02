@@ -1,0 +1,17 @@
+body {
+    background-color: darkgray;
+}
+header {
+    text-align: center;
+}
+#texto-tarefa {
+    margin: auto;
+    text-align: center;
+    margin-left: 45%;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+#lista-tarefa {
+    display: inline-block;
+}
