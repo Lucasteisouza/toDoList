@@ -20,3 +20,6 @@ header {
     min-height: 10%;
     min-width: 10%;
 }
+#selected-item{
+    background-color: gray;
+}
