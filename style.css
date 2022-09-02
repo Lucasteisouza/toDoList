@@ -7,21 +7,33 @@ header {
 #texto-tarefa {
     margin: auto;
     text-align: center;
-    margin-left: 39%;
+    margin-left: 20%;
     background-color: black;
     color: white;
     border: 1px solid white;
 }
 
 #lista-tarefas {
-    display: inline-block;
     margin: 20px 300px;
     background-color: white;
     min-height: 10%;
     min-width: 10%;
+    text-align: center;
 }
 #selected-item{
     background-color: gray;
+}
+#criar-tarefa{
+    background-color: lightgreen;
+}
+#remover-finalizados{
+    margin-left: 20px;
+}
+#apaga-tudo{
+    margin-left: 100px;
+    background-color: red;
+    height: 50px;
+    font-weight: 700;
 }
 .completed{
     text-decoration: line-through solid black;
