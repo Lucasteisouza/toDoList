@@ -16,9 +16,7 @@ header {
 #lista-tarefas {
     display: inline-block;
     margin: 20px 300px;
-    background-color: rgb(50, 50, 50);
+    background-color: white;
     min-height: 10%;
     min-width: 10%;
-    color: white;
-
 }
