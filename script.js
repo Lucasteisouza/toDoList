@@ -10,6 +10,7 @@ function addTask() {
     let taskItem = document.createElement('li');
     taskItem.className = 'taskItem';
     taskItem.addEventListener('click', selectItem);
+    taskItem.addEventListener('dblclick', taskCompleted);
     taskItem.innerText = inputText.value;
     inputText.value ='';
     taskList.appendChild(taskItem);
@@ -23,5 +24,13 @@ function selectItem(event){
             taskItemListed[index].id = '';
         }
         event.target.id ='selected-item'
+    }
+}
+
+function taskCompleted(event) {
+    if (event.target.classList[1] == 'completed'){
+        event.target.classList.remove('completed')
+    }else{
+        event.target.classList.add('completed');
     }
 }
