@@ -1,40 +1,65 @@
 body {
-    background-color: darkgray;
+  background-color: darkgray;
 }
+
 header {
-    text-align: center;
+  text-align: center;
 }
+
 #texto-tarefa {
-    margin: auto;
-    text-align: center;
-    margin-left: 20%;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
+  margin: auto;
+  text-align: center;
+  margin-left: 20%;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  vertical-align: top;
 }
 
 #lista-tarefas {
-    margin: 20px 300px;
-    background-color: white;
-    min-height: 10%;
-    min-width: 10%;
-    text-align: center;
+  margin: 20px 300px;
+  background-color: white;
+  min-height: 10%;
+  min-width: 10%;
+  text-align: center;
 }
-#selected-item{
-    background-color: gray;
+
+#selected-item {
+  background-color: gray;
 }
-#criar-tarefa{
-    background-color: lightgreen;
+
+#criar-tarefa {
+  background-color: lightgreen;
+  display: block;
+  text-align: center;
+  margin-left: 40px;
+  margin-bottom: 15px;
 }
-#remover-finalizados{
-    margin-left: 20px;
+
+#remover-finalizados {
+  margin-left: 60px;
+  padding: 20px;
+  vertical-align: top;
 }
-#apaga-tudo{
-    margin-left: 100px;
-    background-color: red;
-    height: 50px;
-    font-weight: 700;
+
+#apaga-tudo {
+  margin-left: 100px;
+  background-color: red;
+  padding: 20px;
+  font-weight: 700;
+  vertical-align: top;
 }
-.completed{
-    text-decoration: line-through solid black;
+
+.completed {
+  text-decoration: line-through solid black;
+}
+
+#salvar-tarefas {
+  text-align: center;
+  margin-left: 550px;
+}
+
+#main-buttons {
+  display: inline-block;
+  height: 70px;
 }

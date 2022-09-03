@@ -6,12 +6,15 @@ const clearTasksButton = document.getElementById('apaga-tudo');
 const removeFinishedTasksButton = document.getElementById('remover-finalizados');
 const completedTasks = document.getElementsByClassName('completed');
 const saveButton = document.getElementById('salvar-tarefas');
+const removeSingleButton = document.getElementById('remover-selecionado');
 const savedListRestored = JSON.parse(localStorage.getItem('savedList'));
+
 
 addTaskButton.addEventListener('click', addTask);
 clearTasksButton.addEventListener('click', clearTasks);
 removeFinishedTasksButton.addEventListener('click', removeFinished);
 saveButton.addEventListener('click', saveList);
+removeSingleButton.addEventListener('click', removeSingleTask);
 
 if (savedListRestored != null){
     for (index = 0; index < savedListRestored.length; index += 1) {
@@ -74,4 +77,10 @@ function saveList() {
     }
     let stringedObjArr = JSON.stringify(listObjArr);
     localStorage.setItem('savedList', stringedObjArr);
+}
+function removeSingleTask(){
+    const selectedTask = document.getElementById('selected-item');
+    if(selectedTask != undefined) {
+        selectedTask.remove();
+    }
 }
