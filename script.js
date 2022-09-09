@@ -8,15 +8,18 @@ const completedTasks = document.getElementsByClassName('completed');
 const saveButton = document.getElementById('salvar-tarefas');
 const removeSingleButton = document.getElementById('remover-selecionado');
 const savedListRestored = JSON.parse(localStorage.getItem('savedList'));
+const btnUp = document.getElementById('mover-cima');
+const btnDown = document.getElementById('mover-baixo');
 
 function selectItem(e) {
-  if (e.target.id === 'selected-item') {
+  const sel = 'selected-item';
+  if (e.target.id === sel) {
     e.target.id = '';
   } else {
     for (let index = 0; index < taskItemListed.length; index += 1) {
       taskItemListed[index].id = '';
     }
-    e.target.id = 'selected-item';
+    e.target.id = sel;
   }
 }
 
@@ -78,8 +81,55 @@ saveButton.addEventListener('click', saveList);
 
 function removeSingleTask() {
   const selectedTask = document.getElementById('selected-item');
-  if(selectedTask != undefined) {
+  if (selectedTask !== undefined) {
     selectedTask.remove();
   }
 }
 removeSingleButton.addEventListener('click', removeSingleTask);
+
+function findIndex() {
+  const selectedTask = document.querySelector('#selected-item');
+  let indexOfSelected;
+  for (let index = 0; index < taskItemListed.length; index += 1) {
+    if (taskItemListed[index] === selectedTask) {
+      indexOfSelected = index;
+    }
+  }
+  return indexOfSelected;
+}
+
+function moveUp() {
+  const indexOfSelected = findIndex();
+
+  if (indexOfSelected > 0) {
+    const auxTxt = taskItemListed[indexOfSelected].innerText;
+    const auxClass = taskItemListed[indexOfSelected].className;
+    const auxId = taskItemListed[indexOfSelected].id;
+    const indexMinus = indexOfSelected - 1;
+    taskItemListed[indexOfSelected].innerText = taskItemListed[indexMinus].innerText;
+    taskItemListed[indexOfSelected].className = taskItemListed[indexMinus].className;
+    // taskItemListed[indexOfSelected].id = taskItemListed[indexMinus].id;
+    taskItemListed[indexMinus].innerText = auxTxt;
+    taskItemListed[indexMinus].className = auxClass;
+    // taskItemListed[indexMinus].id = auxId;
+  }
+}
+
+function moveDown() {
+  const indexOfSelected = findIndex();
+ 
+  if (indexOfSelected < taskItemListed.length - 1) {
+    const auxTxt = taskItemListed[indexOfSelected].innerText;
+    const auxClass = taskItemListed[indexOfSelected].className;
+    const auxId = taskItemListed[indexOfSelected].id;
+    const indexPlus = indexOfSelected + 1;
+    taskItemListed[indexOfSelected].innerText = taskItemListed[indexPlus].innerText;
+    taskItemListed[indexOfSelected].className = taskItemListed[indexPlus].className;
+    taskItemListed[indexOfSelected].id = taskItemListed[indexPlus].id;
+    taskItemListed[indexPlus].innerText = auxTxt;
+    taskItemListed[indexPlus].className = auxClass;
+    taskItemListed[indexPlus].id = auxId;
+  }
+}
+btnUp.addEventListener('click', moveUp);
+btnDown.addEventListener('click', moveDown);

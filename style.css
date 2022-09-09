@@ -17,11 +17,12 @@ header {
 }
 
 #lista-tarefas {
-  margin: 20px 300px;
+  margin: 20px auto;
   background-color: white;
   min-height: 10%;
   min-width: 10%;
   text-align: center;
+  display: inline-block;
 }
 
 #selected-item {
@@ -62,4 +63,13 @@ header {
 #main-buttons {
   display: inline-block;
   height: 70px;
+}
+
+#container-mv-btn {
+  display: inline-block;
+}
+
+#container {
+  margin: auto;
+  text-align: center;
 }
