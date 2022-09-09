@@ -104,7 +104,7 @@ function moveUp() {
   if (indexOfSelected > 0) {
     const auxTxt = taskItemListed[indexOfSelected].innerText;
     const auxClass = taskItemListed[indexOfSelected].className;
-    const auxId = taskItemListed[indexOfSelected].id;
+    // const auxId = taskItemListed[indexOfSelected].id;
     const indexMinus = indexOfSelected - 1;
     taskItemListed[indexOfSelected].innerText = taskItemListed[indexMinus].innerText;
     taskItemListed[indexOfSelected].className = taskItemListed[indexMinus].className;
@@ -117,7 +117,6 @@ function moveUp() {
 
 function moveDown() {
   const indexOfSelected = findIndex();
- 
   if (indexOfSelected < taskItemListed.length - 1) {
     const auxTxt = taskItemListed[indexOfSelected].innerText;
     const auxClass = taskItemListed[indexOfSelected].className;
